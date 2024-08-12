@@ -7,7 +7,7 @@ import { Grid, Button, Container, TextField } from "@mui/material";
 import HeaderForm from "./HeaderForm";
 import { postFetch } from "../hooks/useFetch";
 import PropTypes from "prop-types";
-import { useRouter } from "next/router";
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const urlUser = `${API_URL}`;
@@ -55,7 +55,7 @@ export const FormContainer = ({ onClose }) => {
           icon: "success",
         });
         resetForm();
-        router.push("/");
+        
       } catch (error) {
         console.error("Error al enviar los datos:", error);
       }
