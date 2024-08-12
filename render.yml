@@ -5,8 +5,8 @@ services:
     plan: free
     rootDir: .
     buildCommand: npm install --prefix frontend && npm run build --prefix frontend
-    startCommand: npm run preview
+    startCommand: npm start --prefix frontend
     staticPublishPath: dist
     envVars:
       - key: NEXT_PUBLIC_API_URL
-        value: https://backend-m-consiente.onrender.com # La URL del backend proporcionada por Render
+        value: https://backend-m-consiente.onrender.com 
