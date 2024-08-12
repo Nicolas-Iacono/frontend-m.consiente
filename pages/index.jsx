@@ -72,7 +72,7 @@ const Home = () => {
             flexDirection: "column",
             backgroundColor: "black",
             width: "100%",
-            height: "240vh",
+            height: {md:"210vh",xs:"230vh"},
           }}
         >
           <TextContainer sx={{ flexDirection: "column", gap: "1rem" }}>
@@ -96,19 +96,19 @@ const Home = () => {
           </TextContainer>
 
           <TextContainer>
-            <Parrafo600>
+            <Parrafo600  sx={{justifyContent:"center", alignItems:"center"}}>
               TE BRINDAMOS EL METODO MOVIMIENTO CONSCIENTE
             </Parrafo600>
           </TextContainer>
 
-          <TextContainer>
-            <ParrafoSub>
+          <TextContainer sx={{margin:{md:'0 auto'}}}>
+            <ParrafoSub sx={{justifyContent:"center", alignItems:"center"}}>
               Descubrí como podés transformar <br />
               tu fisico sin pasar hambre o entrenar Miles de horas
             </ParrafoSub>
           </TextContainer>
 
-          <ContainerImg />
+          <ContainerImg  sx={{margin:{md:'20px auto'},justifyContent:"center", alignItems:"center"}}/>
 
           <TextContainer>
             <Parrafo400>

@@ -9,7 +9,8 @@ export const Footer = () => {
         justifyContent: "center",
         alignItems: "center",
         gap: "2rem",
-        backgroundColor: "black",
+        backgroundColor:"black",
+
       }}
     >
       <Box>

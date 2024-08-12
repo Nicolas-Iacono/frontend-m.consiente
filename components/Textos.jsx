@@ -2,8 +2,11 @@ import { Typography, styled, Grid } from "@mui/material";
 import foto from "../public/images/inicioCel.png";
 export const Titulo = styled(Typography)(() => ({}));
 
-export const ContainerImg = styled(Grid)(() => ({
+export const ContainerImg = styled(Grid)(({ theme }) => ({
   width: "100%",
+  [theme.breakpoints.up('md')]: {
+    width: "25%",
+  },
   backgroundImage: `url(${foto.src})`,
   backgroundSize: "contain",
   backgroundRepeat: "no-repeat",
