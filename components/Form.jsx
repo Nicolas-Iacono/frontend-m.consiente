@@ -54,7 +54,7 @@ export const FormContainer = ({ onClose }) => {
           text: "Revisa en tu correo para obtener tu indice de masa corporal",
           icon: "success",
         });
-        resetForm();
+     
         
       } catch (error) {
         console.error("Error al enviar los datos:", error);
