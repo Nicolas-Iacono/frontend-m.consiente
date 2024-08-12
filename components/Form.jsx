@@ -7,11 +7,14 @@ import { Grid, Button, Container, TextField } from "@mui/material";
 import HeaderForm from "./HeaderForm";
 import { postFetch } from "../hooks/useFetch";
 import PropTypes from "prop-types";
+import { useRouter } from "next/router";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const urlUser = `${API_URL}`;
 
 export const FormContainer = ({ onClose }) => {
+  const router = useRouter();
+
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -45,17 +48,16 @@ export const FormContainer = ({ onClose }) => {
     onSubmit: async (values) => {
       try {
         const response = await postFetch(`${urlUser}/api/user`, values);
-        console.log(response);
 
         Swal.fire({
           title: "Gracias por suscribirte",
           text: "Revisa en tu correo para obtener tu indice de masa corporal",
           icon: "success",
         });
-        // Maneja el éxito, como mostrar un mensaje o redirigir al usuario
+        resetForm();
+        router.push("/");
       } catch (error) {
         console.error("Error al enviar los datos:", error);
-        // Maneja el error, como mostrar un mensaje de error al usuario
       }
     },
   });
@@ -104,7 +106,7 @@ export const FormContainer = ({ onClose }) => {
               fullWidth
               id="age"
               name="age"
-              label="altura"
+              label="Edad"
               type="number"
               value={formik.values.age}
               onChange={formik.handleChange}
@@ -118,7 +120,7 @@ export const FormContainer = ({ onClose }) => {
               fullWidth
               id="weight"
               name="weight"
-              label="peso (kg)"
+              label="Peso (kg)"
               type="number"
               value={formik.values.weight}
               onChange={formik.handleChange}
@@ -175,6 +177,5 @@ export const FormContainer = ({ onClose }) => {
 };
 Form.propTypes = {
   onClose: PropTypes.func.isRequired,
-  // Puedes agregar más validaciones de props según sea necesario
 };
 export default Form;
